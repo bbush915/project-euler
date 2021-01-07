@@ -6,7 +6,7 @@ if (args.length !== 1) {
   throw new Error("Invalid arguments. Usage: node . <Problem #>");
 }
 
-const problem = args[0].padStart(3, "0");
+const problem = args[0].padStart(4, "0");
 run(problem);
 
 function run(problem) {
