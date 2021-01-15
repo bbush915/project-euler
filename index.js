@@ -1,4 +1,4 @@
-const { time, primeFactorization } = require("./utils");
+const { time } = require("./utils");
 
 const args = process.argv.slice(2);
 
