@@ -1,6 +1,6 @@
 /*
 
-  Problem 8:
+  Problem 8: Largest Product in a Series
 
   The four adjacent digits in the 1000-digit number that have the greatest 
   product are 9 × 9 × 8 × 9 = 5832.
@@ -31,6 +31,8 @@
 
 */
 
+const { product } = require("./utils");
+
 function solve() {
   const digits = `
 73167176531330624919225119674426574742355349194934
@@ -58,17 +60,17 @@ function solve() {
     .filter((x) => x !== "\n")
     .map((x) => Number(x));
 
-  let maxProduct = 0;
+  let maxValue = 0;
 
   for (let i = 0; i <= digits.length - 13; i++) {
-    const product = digits.slice(i, i + 13).reduce((acc, cur) => ((acc *= cur), acc), 1);
+    const value = product(digits.slice(i, i + 13));
 
-    if (product > maxProduct) {
-      maxProduct = product;
+    if (value > maxValue) {
+      maxValue = value;
     }
   }
 
-  return maxProduct;
+  return maxValue;
 }
 
 exports.solve = solve;

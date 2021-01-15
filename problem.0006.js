@@ -1,6 +1,6 @@
 /*
 
-  Problem 6:
+  Problem 6: Sum Square Difference
 
   The sum of the squares of the first ten natural numbers is,
 
@@ -18,15 +18,15 @@
 
 */
 
+const {
+  formulae: { nthTriangularNumber, nthSquarePyramidalNumber },
+} = require("./utils");
+
 function solve() {
-  let n = 100;
+  const n = 100;
 
-  let sum = (n * (n + 1)) / 2;
-  let sumSquares = 0;
-
-  for (let i = 1; i <= 100; i++) {
-    sumSquares += i * i;
-  }
+  const sum = nthTriangularNumber(n);
+  const sumSquares = nthSquarePyramidalNumber(n);
 
   return sum * sum - sumSquares;
 }

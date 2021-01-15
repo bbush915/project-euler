@@ -1,6 +1,6 @@
 /*
 
-  Problem 3:
+  Problem 3: Largest Prime Factor
 
   The prime factors of 13195 are 5, 7, 13 and 29.
 
@@ -8,12 +8,14 @@
 
 */
 
-const { factorize } = require("./utils");
+const { primeFactorization } = require("./utils");
 
 function solve() {
-  return factorize(600851475143)
+  const sortedPrimeFactors = primeFactorization(600_851_475_143)
     .map((x) => x.prime)
-    .sort((x, y) => y - x)[0];
+    .sort((x, y) => y - x);
+
+  return sortedPrimeFactors[0];
 }
 
 exports.solve = solve;
